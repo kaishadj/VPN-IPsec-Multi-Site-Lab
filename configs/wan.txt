@@ -1,0 +1,14 @@
+! Reconstructed lab command reference; not a literal show running-config export.
+hostname WAN
+!
+interface GigabitEthernet0/0
+ ip address 62.59.1.2 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 59.62.1.2 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet0/1/0
+ ip address 80.59.62.2 255.255.255.252
+ no shutdown

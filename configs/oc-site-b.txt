@@ -1,0 +1,54 @@
+! Reconstructed lab command reference; not a literal show running-config export.
+! Activate securityk9 and reload the router before entering crypto commands.
+license boot module c1900 technology-package securityk9
+hostname OC-SITE-B
+!
+interface GigabitEthernet0/0
+ ip address 192.168.2.254 255.255.255.0
+ ip nat inside
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 59.62.1.1 255.255.255.252
+ ip nat outside
+ crypto map OCMAP
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 59.62.1.2
+!
+ip access-list extended NAT
+ 10 deny ip 192.168.2.0 0.0.0.255 192.168.1.0 0.0.0.255
+ 15 deny ip 192.168.2.0 0.0.0.255 192.168.3.0 0.0.0.255
+ 20 permit ip 192.168.2.0 0.0.0.255 any
+!
+ip nat inside source list NAT interface GigabitEthernet0/1 overload
+!
+ip access-list extended VPN
+ permit ip 192.168.2.0 0.0.0.255 192.168.1.0 0.0.0.255
+!
+ip access-list extended B-TO-C
+ permit ip 192.168.2.0 0.0.0.255 192.168.3.0 0.0.0.255
+!
+crypto isakmp policy 1
+ authentication pre-share
+ encryption aes 256
+ hash sha
+ group 5
+ lifetime 21600
+!
+crypto isakmp key OpenClassR00m$IP5ecL@b address 62.59.1.1
+crypto isakmp key OpenClassR00m$IP5ecL@bCtoB address 80.59.62.1
+!
+crypto ipsec transform-set OCSET esp-aes 256 esp-sha-hmac
+!
+crypto map OCMAP 10 ipsec-isakmp
+ set peer 62.59.1.1
+ set transform-set OCSET
+ match address VPN
+ set security-association lifetime seconds 3600
+!
+crypto map OCMAP 30 ipsec-isakmp
+ set peer 80.59.62.1
+ set transform-set OCSET
+ match address B-TO-C
+ set security-association lifetime seconds 3600

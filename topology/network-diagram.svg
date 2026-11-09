@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+  <title id="title">Three-site IPsec VPN topology</title>
+  <desc id="desc">Three private LANs connect through site routers A, B and C to one WAN router. The WAN-to-C link is fiber. IPsec tunnels protect traffic between every pair of site LANs.</desc>
+  <rect width="1200" height="740" rx="24" fill="#f7f9fc"/>
+  <style>
+    .title { font: 700 32px Arial, sans-serif; fill: #10243a; }
+    .subtitle { font: 16px Arial, sans-serif; fill: #506278; }
+    .name { font: 700 19px Arial, sans-serif; fill: #10243a; }
+    .detail { font: 15px Arial, sans-serif; fill: #334a61; }
+    .small { font: 13px Arial, sans-serif; fill: #506278; }
+    .link { stroke: #566d83; stroke-width: 4; fill: none; }
+    .fiber { stroke: #c26916; stroke-width: 5; fill: none; }
+    .site { fill: #ffffff; stroke: #c9d7e4; stroke-width: 2; }
+    .wan { fill: #e7f0fa; stroke: #5985b6; stroke-width: 2; }
+    .pc { fill: #e9f6ee; stroke: #74ad89; stroke-width: 2; }
+  </style>
+  <text x="50" y="58" class="title">Multi-Site IPsec VPN Lab</text>
+  <text x="50" y="87" class="subtitle">Physical links are solid. IPsec protects A ↔ B, A ↔ C and B ↔ C traffic across WAN.</text>
+
+  <path class="link" d="M235 197 L235 255"/>
+  <path class="link" d="M965 197 L965 255"/>
+  <path class="link" d="M310 325 L500 360"/>
+  <path class="link" d="M890 325 L700 360"/>
+  <path class="fiber" d="M600 420 L600 525"/>
+  <path class="link" d="M600 620 L600 657"/>
+
+  <rect class="pc" x="105" y="118" width="260" height="79" rx="13"/>
+  <text x="125" y="149" class="name">PC A</text>
+  <text x="125" y="177" class="detail">192.168.1.1/24</text>
+  <rect class="site" x="90" y="255" width="290" height="140" rx="16"/>
+  <text x="115" y="293" class="name">OC-SITE-A · 1941</text>
+  <text x="115" y="325" class="detail">LAN G0/0  192.168.1.254</text>
+  <text x="115" y="353" class="detail">WAN G0/1  62.59.1.1</text>
+
+  <rect class="pc" x="835" y="118" width="260" height="79" rx="13"/>
+  <text x="855" y="149" class="name">PC B</text>
+  <text x="855" y="177" class="detail">192.168.2.1/24</text>
+  <rect class="site" x="820" y="255" width="290" height="140" rx="16"/>
+  <text x="845" y="293" class="name">OC-SITE-B · 1941</text>
+  <text x="845" y="325" class="detail">LAN G0/0  192.168.2.254</text>
+  <text x="845" y="353" class="detail">WAN G0/1  59.62.1.1</text>
+
+  <rect class="wan" x="500" y="315" width="200" height="105" rx="16"/>
+  <text x="567" y="352" class="name">WAN</text>
+  <text x="527" y="378" class="detail">Cisco 1941 router</text>
+  <text x="524" y="402" class="small">IP transit only</text>
+  <text x="337" y="307" class="small">62.59.1.2/30</text>
+  <text x="753" y="307" class="small">59.62.1.2/30</text>
+  <text x="619" y="471" class="small">80.59.62.2/30 · single-mode fiber</text>
+
+  <rect class="site" x="445" y="525" width="310" height="95" rx="16"/>
+  <text x="470" y="559" class="name">OC-SITE-C · 1941</text>
+  <text x="470" y="586" class="detail">LAN G0/0  192.168.3.254</text>
+  <text x="470" y="608" class="detail">WAN G0/1/0  80.59.62.1</text>
+  <rect class="pc" x="470" y="657" width="260" height="63" rx="13"/>
+  <text x="490" y="683" class="name">PC C</text>
+  <text x="490" y="707" class="detail">192.168.3.1/24</text>
+</svg>

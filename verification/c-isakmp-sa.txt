@@ -1,0 +1,6 @@
+OC-SITE-C#show crypto isakmp sa
+
+IPv4 Crypto ISAKMP SA
+dst             src             state          conn-id slot status
+62.59.1.1       80.59.62.1      QM_IDLE           1064    0 ACTIVE
+59.62.1.1       80.59.62.1      QM_IDLE           1065    0 ACTIVE
