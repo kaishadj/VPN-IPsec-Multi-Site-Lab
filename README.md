@@ -56,4 +56,10 @@ Open the `.pkt` file in Packet Tracer and repeat the [verification procedure](do
 
 ## Lab scope
 
-This is a Packet Tracer simulation and a course-based learning project. The pre-shared keys in the lab are demonstration values and must never be reused on a real network. The captured outputs include nonzero receive-error counters on OC-SITE-C despite successful pings; those counters are recorded in the verification notes rather than hidden. Packet Tracer also displays zero digest/verify counters in this exercise, as noted by the [course](https://openclassrooms.com/fr/courses/8787276-mettez-en-place-un-vpn-ipsec-dans-cisco-packet-tracer/8928281-configurez-ipsec).
+This project is a Cisco Packet Tracer simulation developed for educational purposes as part of a networking course.
+
+The pre-shared keys (PSKs) used in this lab are for demonstration purposes only and must never be reused in a production network.
+
+Although the ping tests were successful, the captured outputs show non-zero receive-error counters on OC-SITE-C. These counters are explicitly documented in the verification notes to ensure transparency.
+
+Additionally, Packet Tracer displays zero digest and verification counters in this exercise, as described in the [course](https://openclassrooms.com/fr/courses/8787276-mettez-en-place-un-vpn-ipsec-dans-cisco-packet-tracer/8928281-configurez-ipsec).
