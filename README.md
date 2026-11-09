@@ -4,6 +4,27 @@ A three-site, site-to-site IPsec lab built in Cisco Packet Tracer with Cisco 194
 
 This lab follows the [OpenClassrooms IPsec course](https://openclassrooms.com/fr/courses/8787276-mettez-en-place-un-vpn-ipsec-dans-cisco-packet-tracer/8928281-configurez-ipsec). I built and tested the topology in Packet Tracer as a learning exercise. The repository layout is inspired by [this campus network portfolio repository](https://github.com/pratapgoudaila/Enterprise-Campus-Network-Lab); the network here is a separate VPN project.
 
+## Project Overview
+
+**Objective:** Build and validate secure site-to-site connectivity between three branch offices using Cisco IPsec VPNs.
+
+**Environment:** Cisco Packet Tracer, Cisco 1941 routers.
+
+**Technologies:** IKEv1, IPsec ESP, AES-256, crypto maps, NAT exemption, static routing and ACLs.
+
+**Architecture:** Three branch LANs interconnected through a simulated WAN with three pairwise IPsec VPN connections.
+
+**Validated Results:**
+
+- Successful ICMP connectivity from Site C to Site B (4/4 replies).
+- Active IKE security associations observed on Site C.
+- ESP security associations and packet encryption/decryption counters examined.
+- Further verification required to capture complete results for all site pairs.
+
+**Learning Outcome:** Gained hands-on experience configuring IPsec tunnels, understanding NAT exemption, inspecting security associations and documenting VPN verification.
+
+**Scope:** Guided educational lab based on an OpenClassrooms course. Additional testing and troubleshooting improvements are planned.
+
 ## Repository layout
 
 | Path | Contents |
